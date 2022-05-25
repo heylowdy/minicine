@@ -1,7 +1,7 @@
-<footer class="text-center text-white" style="background-color: #f1f1f1;" >
+<footer class="text-center text-white bg-slate-900" >
     <div class="container pt-9">
       <div class="flex justify-center mb-9">
-        <a href="#!" class="mr-9 text-gray-800">
+        <a href="#!" class="mr-9 text-gray-200">
           <svg
             aria-hidden="true"
             focusable="false"
@@ -18,7 +18,7 @@
             ></path>
           </svg>
         </a>
-        <a href="#!" class="mr-9 text-gray-800">
+        <a href="#!" class="mr-9 text-gray-200">
           <svg
             aria-hidden="true"
             focusable="false"
@@ -35,7 +35,7 @@
             ></path>
           </svg>
         </a>
-        <a href="#!" class="mr-9 text-gray-800">
+        <a href="#!" class="mr-9 text-gray-200">
           <svg
             aria-hidden="true"
             focusable="false"
@@ -52,7 +52,7 @@
             ></path>
           </svg>
         </a>
-        <a href="#!" class="mr-9 text-gray-800">
+        <a href="#!" class="mr-9 text-gray-200">
           <svg
             aria-hidden="true"
             focusable="false"
@@ -69,7 +69,7 @@
             ></path>
           </svg>
         </a>
-        <a href="#!" class="mr-9 text-gray-800">
+        <a href="#!" class="mr-9 text-gray-200">
           <svg
             aria-hidden="true"
             focusable="false"
@@ -86,7 +86,7 @@
             ></path>
           </svg>
         </a>
-        <a href="#!" class="text-gray-800">
+        <a href="#!" class="text-gray-200">
           <svg
             aria-hidden="true"
             focusable="false"
@@ -106,8 +106,8 @@
       </div>
     </div>
   
-    <div class="text-center text-gray-700 p-4" style="background-color: rgba(0, 0, 0, 0.2);">
-      © 2021 Copyright:
-      <a class="text-gray-800" href="https://tailwind-elements.com/">Tailwind Elements</a>
+    <div class="text-center text-white p-4 bg-black">
+      Cinéma LUMIERE - Saint Pierre Réunion © 2021 Copyright
+      <a class="text-gray-800" href="https://tailwind-elements.com/"></a>
     </div>
   </footer>

@@ -1,23 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="{{ asset('./css/app.css')}}" rel="stylesheet" />
-    <title>header</title>
-</head>
 
 
-<body>
+
+
     <header>
 
         <!-- Navbar -->
-        <nav class="navbar navbar-expand-lg shadow-md py-2 bg-white relative flex items-center w-full justify-between">
+        <nav class="navbar navbar-expand-lg shadow-md py-2 bg-black relative flex items-center w-full justify-between">
          <div class="px-6 w-full flex flex-wrap items-center justify-between">
            <div class="flex items-center">
              <button
-               class="navbar-toggler border-0 py-3 lg:hidden leading-none text-xl bg-transparent text-gray-600 hover:text-gray-700 focus:text-gray-700 transition-shadow duration-150 ease-in-out mr-2"
+               class="navbar-toggler border-0 py-3 lg:hidden leading-none text-xl bg-transparent text-white hover:text-yellow-300 focus:text-yellow-300 transition-shadow duration-150 ease-in-out mr-2"
                type="button"
                data-bs-toggle="collapse"
                data-bs-target="#navbarSupportedContentY"
@@ -44,17 +36,11 @@
            <div class="navbar-collapse collapse grow items-center" id="navbarSupportedContentY">
              <ul class="navbar-nav mr-auto lg:flex lg:flex-row">
                <li class="nav-item">
-                 <a class="nav-link block pr-2 lg:px-2 py-2 text-gray-600 hover:text-gray-700 focus:text-gray-700 transition duration-150 ease-in-out" href="#!" data-mdb-ripple="true" data-mdb-ripple-color="light">Home</a>
+                 <a class="nav-link block pr-2 lg:px-2 py-2 text-white hover:text-yellow-300 focus:text-yellow-300 transition duration-150 ease-in-out" href="#!" data-mdb-ripple="true" data-mdb-ripple-color="light">Le LUMIERE </a>
                </li>
                <li class="nav-item">
-                 <a class="nav-link block pr-2 lg:px-2 py-2 text-gray-600 hover:text-gray-700 focus:text-gray-700 transition duration-150 ease-in-out" href="#!" data-mdb-ripple="true" data-mdb-ripple-color="light">Features</a>
-               </li>
-               <li class="nav-item">
-                 <a class="nav-link block pr-2 lg:px-2 py-2 text-gray-600 hover:text-gray-700 focus:text-gray-700 transition duration-150 ease-in-out" href="#!" data-mdb-ripple="true" data-mdb-ripple-color="light">Pricing</a>
-               </li>
-               <li class="nav-item mb-2 lg:mb-0">
-                 <a class="nav-link block pr-2 lg:px-2 py-2 text-gray-600 hover:text-gray-700 focus:text-gray-700 transition duration-150 ease-in-out" href="#!" data-mdb-ripple="true" data-mdb-ripple-color="light">About</a>
-               </li>
+                 <a class="nav-link block pr-2 lg:px-2 py-2 text-white hover:text-yellow-300 focus:text-yellow-300 transition duration-150 ease-in-out" href="#!" data-mdb-ripple="true" data-mdb-ripple-color="light">Tous les  films</a>
+               </li>   
              </ul>
            </div>
          </div>

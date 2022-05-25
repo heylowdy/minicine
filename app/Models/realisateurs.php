@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class realisateurs extends Model
 {
     use HasFactory;
+
+  
 }

@@ -1,5 +1,5 @@
 <?php
-
+use App\Http\Controllers\FilmsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +16,12 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('crudfilm',[FilmsController::class,'getall']);
+
+
+
+
+
+Route::post('/add', [FilmsController::class,'add']);
+Route::get('/add', [FilmsController::class,'add']);

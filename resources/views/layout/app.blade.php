@@ -8,30 +8,32 @@
     <title>libaires</title>
 </head>
 
-    <nav>
+
+<body>
+
+    <header>
     @include('layout.nav')
-    </nav>
-
-
-@yield('header')
+    </header>
 
 
 
-<main class="h-screen">
+
+
+
+<main >
      
       
-    
+     @yield('main')
 
    
     
     </main>
-      @yield('main')
+     
 
 <div class="footer">
    @include('layout.footer')
 
 
 </div>
-@yield('footer')
 </body>
 </html>
