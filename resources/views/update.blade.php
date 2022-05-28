@@ -1,75 +1,59 @@
 @extends('layout.app')
 
-
-
 @section('main')
-
+<body class=" bg-slate-700">
  <!-- Create Post -->
-
  <div>
-    <div class="flex flex-col items-center min-h-screen pt-6 pb-10 sm:justify-center sm:pt-0 ">
-      <div class="w-full px-16 py-10 mt-4 overflow-hidden bg-gray-400  shadow-md shadow-gray-400 rounded-lg lg:max-w-4xl">
+    <div class="flex flex-col items-center min-h-screen pt-6 pb-10 sm:justify-center sm:pt-0">
+      <div class="w-full px-16 py-10 mt-4 overflow-hidden bg-slate-400  shadow-md shadow-slate-400 rounded-lg lg:max-w-4xl">
         <div class="mb-4">
-          <h1 class="titre_create">
-          Ajouter un film
+          <h1 class="text-rose-700 font-mono text-4xl font-bold underline underline-offset-8 w-72">
+            Mise à jour d'un film 
           </h1> 
         </div>
-    
-        <!-- message d'erreur comme pour le dd et vardump A FAIRE ABSOLUMENT -->
-        @if ($errors->any())
-    <div class="alert alert-danger">
-        <ul>
-            @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-    </div>
-@endif 
 
-
-
-    <!--  -----------------------   -->
         <div class="w-full px-6 py-4 bg-white rounded shadow-md shadow-white ring-1 ring-gray-900/10">
-          <form method="POST" action="/add" enctype="multipart/form-data">
+          <form method="POST" action="/update" enctype="multipart/form-data">
             @csrf
             <!-- Title -->
+            <input type="hidden" value="{{$film->id}}" name="id">
             <div>
-              <label class="block text-sm font-bold text-gray-700 " for="réalisateur">réalisateur</label>
-  
-           <input type="text" name="réalisateur" placeholder="réalisateur" class="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-2 py-2 rounded shadow leading-tight focus:outline-none focus:shadow-outline placeholder:text-gray-400 placeholder:text-left focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"> 
-              
-    
-               
-                
-        
-            </div>
+              <label class="block text-sm font-bold text-gray-700 ">Réalisateur</label>
+              <select name="realisateur" required  class="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-2 py-2 rounded shadow leading-tight focus:outline-none focus:shadow-outline placeholder:text-black placeholder:text-left focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
+                @foreach ($realisateurs as $real) 
+          
+                <option @if($film->id_real===$real->id) selected @endif
+                value="{{$real->id}}"> {{$real->nom}} {{$real->prenom}}</option>
+                @endforeach
+           </select>
+              </div>
 
-            <div>
-      
+           <div>
               <label class="block text-sm font-bold text-gray-700" for="titre">
                 Titre
               </label>
 
               <input
-                class="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-4 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline placeholder:text-gray-400 placeholder:text-right focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
-                type="text" name="titre" placeholder="titre" required />
-            </div>
+                class="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-4 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline placeholder:text-black placeholder:text-left focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+               value="{{$film->titre}}" type="text" name="titre" placeholder="titre" />
+            </div> 
 
             <!-- Description -->
             <div class="mt-4">
               <label class="block text-sm font-bold text-gray-700" for="synopsis">
-                synopsis
+                Synopsis
               </label>
               <div class="mb-3">
               <textarea name="synopsis"class="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline placeholder:text-gray-400 placeholder:text-right focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
-                rows="4" placeholder="400"></textarea>
+                rows="4" placeholder="synopsis">{{$film->synopsis}}</textarea>
             </div>
 
     
-               <div class="m-4">
+                  <div class="m-4">
                       <label class="inline-block mb-2 text-gray-500">Upload
-                          Affiche(jpg,png,svg,jpeg)</label>
+                          Image(jpg,png,svg,jpeg)</label>
                       <div class="flex items-center justify-center w-full">
+                        <img src="{{asset('storage/' . $film->affiche)}}" class="img-responsive">
                           <label class="flex flex-col w-full h-32 border-4 border-dashed hover:bg-gray-100 hover:border-gray-300">
                               <div class="flex flex-col items-center justify-center pt-7">
                                   <svg xmlns="http://www.w3.org/2000/svg"
@@ -83,9 +67,9 @@
                                   </p>
                               </div>
                               <input type="file" class="opacity-0" />
-
+                           
                               <label class="label-image" for="votre-image">
-                            
+                              
                                  <input type="file" class="post-img text-gray-400 " name="rec_photo" accept=".jpg, .jpeg" required>
                              </label>
 
@@ -93,15 +77,25 @@
                           </label>
                       </div>
                   </div>
-                
-            
+                 <div>
+              <label class="block text-sm font-bold text-gray-700 ">Salle</label>
+              <select name="salle" required  class="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-2 py-2 rounded shadow leading-tight focus:outline-none focus:shadow-outline placeholder:text-black placeholder:text-left focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
+                @foreach ($salles as $salle) 
+          
+                <option @if($salle->id_salle===$salle->id) selected @endif
+                value="{{$salle->id}}"> {{$salle->nom}} </option>
+                @endforeach
+           </select>
+              </div>
+              
+              
                   <label class="block text-sm font-bold text-gray-700" for="titre">
                     durée
                   </label>
     
-                  <input
-                    class="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-4 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline placeholder:text-gray-400 placeholder:text-right focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
-                    type="text" name="durée" placeholder="durée" required />
+                  <input value="{{$film->duree}}"
+                    class="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-4 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline placeholder:text-black placeholder:text-left focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                    type="text" name="durée" placeholder="durée"  />
                 </div>
      
 
@@ -110,9 +104,9 @@
                 </label>
   
                 <input
-                  class="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-4 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline placeholder:text-gray-400 placeholder:text-right focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
-                  type="date" name="date_de _sortie" placeholder="date_de_sortie" required />
-              </div>
+                  class="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-4 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline placeholder:text-gray-400 placeholder:text-left focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                   value="{{$film->date_de_sortie}}" type="date" name="date_de_sortie" placeholder="date_de_sortie" required />
+             
         
               <div>
               <label class="block text-sm font-bold text-gray-700" for="titre">
@@ -120,8 +114,8 @@
               </label>
 
               <input
-                class="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-4 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline placeholder:text-gray-400 placeholder:text-right focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
-                type="text" name="version" placeholder="version" required />
+                class="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-4 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline placeholder:text-black placeholder:text-left focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+               value="{{$film->version}}" type="text" name="version" placeholder="version" required />
             </div>
     
             <div>
@@ -130,9 +124,12 @@
             </label>
 
             <input
-              class="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-4 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline placeholder:text-gray-400 placeholder:text-right focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
-              type="text" name="csa" placeholder="csa" required />
+              class="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-4 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline placeholder:text- placeholder:text-left focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+             value="{{$film->csa}}" type="text" name="csa" placeholder="csa" required />
           </div>
+
+     
+
 
             <div class="relative w-64 mt-4">
               <select class="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
@@ -160,7 +157,9 @@
             </div>
           </form>
         </div>
-      
-
+      </div>
+    </div>
 
 @endsection
+</body>
+</html>

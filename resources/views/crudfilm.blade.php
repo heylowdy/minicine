@@ -5,19 +5,20 @@
 
 
 @section('main')
+@include('component/addfilm')
  <body class="body_crud">
   <div class="main">
  
-    <div class="container">
+    <div class="container w-full">
         <div class="mb-4">
           <h1 class="titre_crud">CRUD-LE LUMIERE</h1>
-          <div class="flex justify-end">
+     {{--  <div class="flex justify-end">
             <button><a href="/add" target="_blank">Ajouter un film</button></a>
-          </div>
+          </div>--}}  
         </div>
         <div class="flex flex-col shadow-xl">
-          <div class="overflow-x-auto sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8">
-            <div class="inline-block min-w-full overflow-hidden align-center  rounded-lg bg-white shadow-md shadow-white sm:rounded-lg">
+          <div class=" sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8">
+            <div class="inline-block min-w-full  align-center  rounded-lg bg-white shadow-md shadow-white sm:rounded-lg">
               <table class="min-w-full">
                
                 <thead>
@@ -46,6 +47,8 @@
                       </th>
                       <th>csa                      
                       </th>
+                      <th>Catégories                      
+                      </th>
                     <th colspan="3">
                       Action</th>
                   </tr>
@@ -70,7 +73,7 @@
                     </td>
       
                     <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
-                        <a href="/crudfilm/{{$film->id_real}}">{{$film->realisateur->nom}}/{{$film->realisateur->prenom}}</a>
+                        <a href="/crudfilm/{{$film->id_real}}">{{$film->realisateur->nom}}{{$film->realisateur->prenom}}</a>
                     </td>
                     <td class="px-6 py-4 text-sm leading-5 text-gray-500 whitespace-no-wrap border-b border-gray-200">
                       <span>{{$film->date_de_sortie}}</span>
@@ -84,23 +87,20 @@
                     <td class="px-6 py-4 text-sm leading-5 text-gray-500 whitespace-no-wrap border-b border-gray-200">
                       <span>{{$film->version}}</span>
                     </td>
-                    <td class="px-6 py-4 text-sm leading-5 text-gray-500 whitespace-no-wrap border-b border-gray-200">
-                      <span><img src="{{asset('storage/' . $film->affiche)}}" class="img-responsive"></span>
+                    <td class=" whitespace-no-wrap border-b border-gray-200">
+                      <img src="{{asset('storage/' . $film->affiche)}}" class="img-responsive width=200px" >
                     </td>
                     <td class="px-6 py-4 text-sm leading-5 text-gray-500 whitespace-no-wrap border-b border-gray-200">
                       <span>{{$film->csa}}</span>
                     </td>
-      
-
-
-
-
-
-
+                  <td class="px-6 py-4 text-sm leading-5 text-gray-500 whitespace-no-wrap border-b border-gray-200">
+                     <span>{{$film->categories}}</span>
+                    </td> }}
+    
 
 
                     <td class="text-sm font-medium leading-5 text-center whitespace-no-wrap border-b border-gray-200 ">
-                      <a href="update.html" target="_blank" class="text-indigo-600 hover:text-indigo-900">
+                      <a href="/update/{{$film->id}}" target="_blank" class="text-indigo-600 hover:text-indigo-900">
                         <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24"
                           stroke="currentColor">
                           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"

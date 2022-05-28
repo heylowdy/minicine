@@ -5,7 +5,7 @@
     <header>
 
         <!-- Navbar -->
-        <nav class="navbar navbar-expand-lg shadow-md py-2 bg-black relative flex items-center w-full justify-between">
+        <nav class="navbar navbar-expand-lg py-2 bg-gray-800  relative flex items-center w-full justify-between">
          <div class="px-6 w-full flex flex-wrap items-center justify-between">
            <div class="flex items-center">
              <button
