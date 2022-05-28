@@ -120,6 +120,16 @@ class Filmscontroller extends Controller
     }
 
 
+    public function show($id){
+        $film=Films::find($id);
+    
+        return view('/Read',[
+            'film' =>$film ,
+        
+
+            ]);
+        }
+
     public function showdel($id)
     {
         $film = Films::find($id);

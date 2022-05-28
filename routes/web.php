@@ -33,3 +33,8 @@ Route::post('update/', [FilmsController::class,'update']);
 Route::get('/showdelete/{id}', [FilmsController::class,'showdel']);   
 
 Route::delete('/crudfilm/{id}', [FilmsController::class,'delete']);
+
+
+Route::get('/Read/{id}',[FilmsController::class,'show']);
+
+

@@ -109,7 +109,7 @@
                       </a>
       
                     <td class="text-sm font-medium leading-5 text-center whitespace-no-wrap border-b border-gray-200 ">
-                      <a href="Read.html" target="_blank" class="text-gray-600 hover:text-gray-900">
+                      <a href="/Read/{{$film -> id}}" target="_blank" class="text-gray-600 hover:text-gray-900">
                         <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24"
                           stroke="currentColor">
                           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
