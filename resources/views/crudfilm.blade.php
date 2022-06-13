@@ -12,9 +12,8 @@
     <div class="container w-full">
         <div class="mb-4">
           <h1 class="titre_crud">CRUD-LE LUMIERE</h1>
-     {{--  <div class="flex justify-end">
-            <button><a href="/add" target="_blank">Ajouter un film</button></a>
-          </div>--}}  
+    
+          </div>npm 
         </div>
         <div class="flex flex-col shadow-xl">
           <div class=" sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8">

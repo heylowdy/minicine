@@ -150,10 +150,10 @@
         </div>
 
           <div class="relative w-64 mt-4">
-            <select class="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
-              <option class="text-sm font-bold text-gray-700 ">Catégories</option>
-              <option>Option 1</option>
-              <option>Option 2</option>
+            <select name="salles" class="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
+              <option class="text-sm font-bold text-gray-700 " >categorie</option>
+              <option>frissons</option>
+              <option>rire</option>
               <option>Option 3</option>
             </select>
             <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">

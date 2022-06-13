@@ -63,6 +63,7 @@ class Filmscontroller extends Controller
             $film->synopsis = $input['synopsis'];
             $film->id_real = $input['réalisateur'];
             $film->duree = $input['duree'];
+        
 
             $film->version = $input['version'];
             $film->csa = $input['csa'];

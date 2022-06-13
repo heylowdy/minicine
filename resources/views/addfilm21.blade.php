@@ -136,7 +136,7 @@
 
             <div class="relative w-64 mt-4">
               <select class="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
-                <option class="text-sm font-bold text-gray-700 ">Catégories</option>
+                <option class="text-sm font-bold text-gray-700" name="salles">salles</option>
                 <option>Option 1</option>
                 <option>Option 2</option>
                 <option>Option 3</option>
