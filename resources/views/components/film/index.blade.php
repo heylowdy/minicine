@@ -1,7 +1,7 @@
-<div class="flex flex-wrap m-4 max-w-sm">
+<div class=" flex flex-wrap m-4 max-w-sm">
   
     <!-- Life is available only in the present moment. - Thich Nhat Hanh -->
-    <div class="p-2 mb-5 space-y-2 bg-slate-300  rounded shadow-md shadow-gray-600 ">
+    <div class="p-2 mb-5 space-y-2 bg-gray-500  rounded shadow-md shadow-gray-600 w-full  ">
       {{-- IMAGE --}}
          {{$image}}
 

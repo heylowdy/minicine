@@ -13,11 +13,11 @@
         <div class="mb-4">
           <h1 class="titre_crud">CRUD-LE LUMIERE</h1>
     
-          </div>npm 
+          </div>
         </div>
         <div class="flex flex-col shadow-xl">
           <div class=" sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8">
-            <div class="inline-block min-w-full  align-center  rounded-lg bg-white shadow-md shadow-white sm:rounded-lg">
+            <div class="inline-block min-w-full align-center rounded-lg bg-white shadow-md shadow-white sm:rounded-lg">
               <table class="min-w-full">
                
                 <thead>

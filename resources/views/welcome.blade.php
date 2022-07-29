@@ -7,15 +7,12 @@
     <div >
      @foreach ($films as $film)
     
-    {{-- <div class="p-4 md:w-1/3"> --}}
-      {{-- <div class="text-sm text-red-600 font-semibold mx-auto max-w-4xl"> --}}
-      
-        {{-- </div> --}}
+  
         <div > 
           <x-film.index :film="$film">
             {{-- IMAGE --}}
     <x-slot name="image">
-     <img class="lg:max-w-lg md:h-72 object-cover object-center scale-100 transition-all duration-400 hover:scale-110" src="{{asset('storage/' . $film->affiche)}}" alt="blog">
+     <img class="lg:max-w-full md:h-72 object-cover object-center scale-100 transition-all duration-400 hover:scale-110" src="{{asset('storage/' . $film->affiche)}}" alt="blog">
 
     </x-slot>
 
