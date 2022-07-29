@@ -3,7 +3,7 @@
 
 
 @section('main')
-<form method="POST" action="/crudfilm/{{$film->id}}">
+<form method="POST" action="/user/{{$user->id}}">
     @csrf
          @method ('DELETE')      
                  
@@ -12,7 +12,7 @@
                <h3 class="text-2xl  text-gray-700 font-semibold mt-6 mb-2 text-center">Etes vous sur de vouloir supprimer le livre ?</h3>  
                    <div class="flex  mb-4 space-x-2">
           <button type="submit"  class="bg-blue-600 mr-6">NON</button>
-            <input type="hidden" name="id" value="{{$film->id}}">
+            <input type="hidden" name="id" value="{{$user->id}}">
                    <button type="submit"  class="bg-red-600 shadow-lg shadow-red-600">OUI</button>
                  </div>
                </form>
